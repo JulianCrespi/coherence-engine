@@ -20,7 +20,8 @@ The walkthrough replays recorded model requests and the fictional approval. It r
 
 ## How it uses Relate
 
-**Mode** Single file  
+**Mode** Single file
+
 **Saved graph** [`data/north.rl`](data/north.rl)
 
 Relate runs in the Python process and stores the fictional North graph in one portable file. Judges can reopen the included graph to inspect agent assignments, temporal observations, versioned evidence, and the Commercial Ops notification without a database server.
