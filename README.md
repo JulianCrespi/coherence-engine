@@ -105,15 +105,7 @@ Copyright © 2026 Julián Crespi. All rights reserved.
 
 **Coherence Engine is proprietary software.**
 
-The materials in this repository are made publicly accessible for inspection, demonstration, and evaluation in connection with the Relate by Neo4j Hackathon.
-
-Permission is granted to hackathon organizers and judges to download, install, execute, and evaluate the software solely for competition-related purposes.
-
-Except for this limited permission, rights granted under GitHub's Terms of Service, or rights provided by applicable law, no permission is granted to reproduce, modify, redistribute, sublicense, create derivative works from, commercially exploit, or otherwise use the proprietary materials without prior written authorization from the copyright holder.
-
-Third-party software and dependencies remain subject to their respective licenses.
-
-All rights not expressly granted are reserved.
+The [license](LICENSE) describes the permissions for hackathon organizers and judges.
 
 ## Commercial inquiries
 
