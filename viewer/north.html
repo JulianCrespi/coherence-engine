@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>North handoff · Coherence Engine</title>
+  <link rel="stylesheet" href="/viewer.css">
+  <link rel="stylesheet" href="/north.css">
+  <script src="/north.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to Ask Both</a>
+  <div class="north-shell">
+    <header class="north-header">
+      <p class="brand-name">Coherence Engine</p>
+      <p class="north-model">Live · GPT-6.2 Sol Low</p>
+    </header>
+    <main id="main" class="north-main">
+      <h1>North handoff</h1>
+      <div class="north-context">
+        <div class="north-role"><strong>Maya</strong><span>Delivery · Personal agent</span></div>
+        <label for="day">What Maya knew
+          <select id="day">
+            <option value="14" selected>Day 14 · After the amendment</option>
+            <option value="13">Day 13 · Before the amendment</option>
+          </select>
+        </label>
+      </div>
+      <section class="north-watch" aria-labelledby="watch-title">
+        <h2 id="watch-title">Commercial Ops · Daily contract watch</h2>
+        <p id="watch" aria-live="polite">Reading the simulated timeline…</p>
+        <p id="rule" class="north-rule"></p>
+      </section>
+      <form id="ask-form">
+        <label for="question" class="question-label">Ask as Maya</label>
+        <textarea id="question" rows="2" maxlength="500" required
+          aria-describedby="question-help"></textarea>
+        <div class="ask-controls">
+          <p id="question-help">Use a fictional North question. Both answers use the same sources and cutoff.</p>
+          <button id="ask" type="submit" class="primary" disabled>Ask Both</button>
+        </div>
+        <p id="ask-status" role="status" aria-live="polite"></p>
+      </form>
+      <section class="north-answers" aria-label="Compare answers">
+        <article class="north-answer" id="baseline">
+          <h2>Sources only</h2>
+          <p class="answer-text">Maya’s permitted source records.</p>
+          <p class="answer-usage"></p>
+          <div class="answer-evidence"></div>
+        </article>
+        <article class="north-answer connected" id="connected">
+          <h2>Sources + Relate</h2>
+          <p class="answer-text">The same records, with temporal observations and their graph connections.</p>
+          <p class="answer-usage"></p>
+          <div class="answer-evidence"></div>
+        </article>
+      </section>
+      <details class="north-details">
+        <summary>Inspect Relate observations and evidence</summary>
+        <ol id="observations"></ol>
+      </details>
+    </main>
+  </div>
+</body>
+</html>

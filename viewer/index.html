@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coherence Engine · Judge replay</title>
+  <link rel="stylesheet" href="/viewer.css">
+  <script src="/viewer.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#scene-title">Skip to the graph</a>
+  <div class="shell">
+    <header class="masthead">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <div>
+          <p class="brand-name">Coherence Engine</p>
+          <p class="brand-detail">A fictional company in Relate</p>
+        </div>
+      </div>
+      <div class="run-status" id="run-status" role="status">Loading replay</div>
+    </header>
+
+    <div class="workspace">
+      <nav class="story" aria-label="Walkthrough scenes">
+        <h2>Walkthrough</h2>
+        <button class="act" data-scene="remember" aria-current="step">
+          <span class="act-number">01</span><span><strong>Remember</strong><small>Restore the partnership</small></span>
+        </button>
+        <button class="act" data-scene="respond">
+          <span class="act-number">02</span><span><strong>Respond</strong><small>Trace the North change</small></span>
+        </button>
+        <button class="act" data-scene="discover">
+          <span class="act-number">03</span><span><strong>Discover</strong><small>Connect two teams</small></span>
+        </button>
+        <div class="story-note">
+          <strong>Judge replay</strong>
+          <p>Recorded model calls. Fresh Relate reads, writes, and simulated effects.</p>
+        </div>
+      </nav>
+
+      <main class="main" id="main">
+        <header class="scene-header">
+          <h1 id="scene-title" tabindex="-1">Maya’s agent remembers the handoff</h1>
+          <p id="scene-summary"></p>
+        </header>
+        <div class="workbench">
+          <section class="map-panel" aria-label="Scoped graph">
+            <div class="map-head">
+              <h2>Relate graph</h2>
+              <div class="roles" id="roles" aria-label="Viewpoint" role="group"></div>
+            </div>
+            <p class="mobile-replay">Recorded model calls. Fresh Relate and simulator run.</p>
+            <div class="map" id="map" aria-label="Select a node to read its evidence">
+              <canvas id="links" aria-hidden="true"></canvas>
+              <div id="nodes"></div>
+              <p id="map-status" class="map-status" hidden></p>
+            </div>
+            <details class="relationship-list">
+              <summary>Read graph relationships</summary>
+              <ul id="relationship-items"></ul>
+            </details>
+          </section>
+          <aside class="inspector" aria-label="Selected node evidence">
+            <h2>Evidence</h2>
+            <div id="evidence" aria-live="polite">
+              <p class="placeholder">Select a graph node.</p>
+            </div>
+          </aside>
+        </div>
+        <footer class="scene-controls">
+          <button id="previous" class="secondary" disabled>Previous scene</button>
+          <button id="next" class="primary">Next · Respond</button>
+        </footer>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

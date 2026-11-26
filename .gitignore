@@ -1,0 +1,10 @@
+.DS_Store
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+.env.*
+*.py[cod]
+*.sqlite*
+*.rl*
+!data/north.rl

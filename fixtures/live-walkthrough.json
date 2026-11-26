@@ -1,0 +1,704 @@
+{
+  "fixture": "north-handoff-v1",
+  "mode": "live-local",
+  "model": {
+    "name": "qwen3:1.7b",
+    "digest": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7"
+  },
+  "events": [
+    {
+      "event": "model_turn",
+      "actor": "delivery",
+      "session": "d2d3039f75d741d08012e8a686035bbf",
+      "instruction": "Call read_context to identify your partnership. Use the empty argument object {}.",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_t6duurou",
+          "function": {
+            "index": 0,
+            "name": "read_context",
+            "arguments": {}
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool",
+      "actor": "delivery",
+      "session": "d2d3039f75d741d08012e8a686035bbf",
+      "tool": "read_context",
+      "arguments": {},
+      "result": {
+        "agent": "delivery",
+        "principal": "Maya",
+        "role": "Delivery",
+        "session": "d2d3039f75d741d08012e8a686035bbf",
+        "work": [
+          {
+            "task": "Resolve the North critical notice handoff",
+            "history": "Ari left a note on the dependency",
+            "author": "Ari",
+            "grant": "institutional",
+            "state": "open"
+          }
+        ]
+      }
+    },
+    {
+      "event": "model_turn",
+      "actor": "delivery",
+      "session": "db7588c9da7a4200bb6beada8b9802da",
+      "instruction": "Call read_context to restore your partnership. Use the empty argument object {}.",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_l28lbgub",
+          "function": {
+            "index": 0,
+            "name": "read_context",
+            "arguments": {}
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool",
+      "actor": "delivery",
+      "session": "db7588c9da7a4200bb6beada8b9802da",
+      "tool": "read_context",
+      "arguments": {},
+      "result": {
+        "agent": "delivery",
+        "principal": "Maya",
+        "role": "Delivery",
+        "session": "db7588c9da7a4200bb6beada8b9802da",
+        "work": [
+          {
+            "task": "Resolve the North critical notice handoff",
+            "history": "Ari left a note on the dependency",
+            "author": "Ari",
+            "grant": "institutional",
+            "state": "open"
+          }
+        ]
+      }
+    },
+    {
+      "event": "restored",
+      "prior_session": "d2d3039f75d741d08012e8a686035bbf",
+      "context": {
+        "agent": "delivery",
+        "principal": "Maya",
+        "role": "Delivery",
+        "session": "db7588c9da7a4200bb6beada8b9802da",
+        "work": [
+          {
+            "task": "Resolve the North critical notice handoff",
+            "history": "Ari left a note on the dependency",
+            "author": "Ari",
+            "grant": "institutional",
+            "state": "open"
+          }
+        ]
+      }
+    },
+    {
+      "event": "model_turn",
+      "actor": "legal",
+      "session": "8611e337f4504807bc71c0412bf5f914",
+      "instruction": "Call read_context to identify your partnership. Use the empty argument object {}.",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_c18rkzel",
+          "function": {
+            "index": 0,
+            "name": "read_context",
+            "arguments": {}
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool",
+      "actor": "legal",
+      "session": "8611e337f4504807bc71c0412bf5f914",
+      "tool": "read_context",
+      "arguments": {},
+      "result": {
+        "agent": "legal",
+        "principal": "Kai",
+        "role": "Legal",
+        "session": "8611e337f4504807bc71c0412bf5f914",
+        "work": []
+      }
+    },
+    {
+      "event": "model_turn",
+      "actor": "legal",
+      "session": "8611e337f4504807bc71c0412bf5f914",
+      "instruction": "Call read_amendment to inspect the signed record. Use the empty argument object {}.",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_l4a2ir1f",
+          "function": {
+            "index": 0,
+            "name": "read_amendment",
+            "arguments": {}
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool",
+      "actor": "legal",
+      "session": "8611e337f4504807bc71c0412bf5f914",
+      "tool": "read_amendment",
+      "arguments": {},
+      "result": {
+        "current": {
+          "revision": "north-v2",
+          "hours": 24,
+          "effective_day": 10,
+          "recorded_day": 14,
+          "source": "north-amendment",
+          "signed": true
+        },
+        "source": {
+          "source": "north-amendment",
+          "version": 1,
+          "span": "clause-2",
+          "author": "Kai",
+          "recorded_day": 14,
+          "passage": "Signed amendment. North critical notices are due within 24 hours. Effective day 10. South and monthly reports keep their existing terms."
+        },
+        "conflicting_draft": {
+          "source": "unsigned-draft",
+          "version": 1,
+          "span": "clause-2",
+          "author": "Commercial",
+          "recorded_day": 13,
+          "passage": "Unsigned draft. Consider extending the change to both sites.",
+          "signed": false
+        }
+      }
+    },
+    {
+      "event": "amendment_clocks",
+      "known_on_effective_day": {
+        "revision": "base",
+        "hours": 48,
+        "effective_day": 1,
+        "recorded_day": 1,
+        "source": null
+      },
+      "read_after_recording": {
+        "revision": "north-v2",
+        "hours": 24,
+        "effective_day": 10,
+        "recorded_day": 14,
+        "source": "north-amendment"
+      }
+    },
+    {
+      "event": "model_turn",
+      "actor": "legal",
+      "session": "8611e337f4504807bc71c0412bf5f914",
+      "instruction": "Use publish_pulse with the signed current revision identifier. Copy only the revision field from current. Use exactly these argument keys: revision.",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_eh14bn5f",
+          "function": {
+            "index": 0,
+            "name": "publish_pulse",
+            "arguments": {
+              "revision": "north-v2"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool",
+      "actor": "legal",
+      "session": "8611e337f4504807bc71c0412bf5f914",
+      "tool": "publish_pulse",
+      "arguments": {
+        "revision": "north-v2"
+      },
+      "result": {
+        "event": "notice:north-v2",
+        "recipient": "delivery",
+        "site": "north",
+        "revision": "north-v2"
+      }
+    },
+    {
+      "event": "model_turn",
+      "actor": "delivery",
+      "session": "db7588c9da7a4200bb6beada8b9802da",
+      "instruction": "Call read_pulse to read your assigned notification. Use the empty argument object {}.",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_t0rf9fhn",
+          "function": {
+            "index": 0,
+            "name": "read_pulse",
+            "arguments": {}
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool",
+      "actor": "delivery",
+      "session": "db7588c9da7a4200bb6beada8b9802da",
+      "tool": "read_pulse",
+      "arguments": {},
+      "result": {
+        "event": "notice:north-v2",
+        "publisher": "legal",
+        "site": "north",
+        "revision": "north-v2",
+        "hours": 24
+      }
+    },
+    {
+      "event": "model_turn",
+      "actor": "delivery",
+      "session": "db7588c9da7a4200bb6beada8b9802da",
+      "instruction": "Use find_job with the event identifier returned by read_pulse. Use exactly these argument keys: event.",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_vc9shyfy",
+          "function": {
+            "index": 0,
+            "name": "find_job",
+            "arguments": {
+              "event": "notice:north-v2"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool",
+      "actor": "delivery",
+      "session": "db7588c9da7a4200bb6beada8b9802da",
+      "tool": "find_job",
+      "arguments": {
+        "event": "notice:north-v2"
+      },
+      "result": {
+        "status": "resolved",
+        "job": "notify-8",
+        "component": "north-critical",
+        "note_source": "handoff-note",
+        "rename_source": "scheduler-change",
+        "evidence": [
+          {
+            "source": "handoff-note",
+            "version": 1,
+            "span": "paragraph-1",
+            "author": "Ari",
+            "recorded_day": 9,
+            "passage": "North critical notices run on component north-critical. Find its current job in the scheduler change log."
+          },
+          {
+            "source": "scheduler-change",
+            "version": 1,
+            "span": "change-41",
+            "author": "Operations",
+            "recorded_day": 13,
+            "passage": "Component north-critical now runs under scheduler job notify-8."
+          }
+        ]
+      }
+    },
+    {
+      "event": "model_turn",
+      "actor": "delivery",
+      "session": "db7588c9da7a4200bb6beada8b9802da",
+      "instruction": "Copy event from read_pulse. Copy job, note_source, and rename_source as strings from find_job. Use exactly these argument keys: event, job, note_source, rename_source.",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_7lkcq930",
+          "function": {
+            "index": 0,
+            "name": "propose_repair",
+            "arguments": {
+              "note_source": "handoff-note",
+              "rename_source": "scheduler-change",
+              "event": "notice:north-v2",
+              "job": "notify-8"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool",
+      "actor": "delivery",
+      "session": "db7588c9da7a4200bb6beada8b9802da",
+      "tool": "propose_repair",
+      "arguments": {
+        "note_source": "handoff-note",
+        "rename_source": "scheduler-change",
+        "event": "notice:north-v2",
+        "job": "notify-8"
+      },
+      "result": {
+        "id": "repair:notice:north-v2",
+        "job": "notify-8",
+        "site": "north",
+        "revision": "north-v2",
+        "hours": 24,
+        "evidence": [
+          "handoff-note",
+          "scheduler-change"
+        ],
+        "state": "proposed"
+      }
+    },
+    {
+      "event": "delivery_approval_denied",
+      "actor": "delivery"
+    },
+    {
+      "event": "approved",
+      "approval": {
+        "id": "effect:repair:notice:north-v2",
+        "proposal": "repair:notice:north-v2",
+        "job": "notify-8",
+        "site": "north",
+        "hours": 24,
+        "revision": "north-v2",
+        "state": "pending",
+        "approver": "Stan"
+      }
+    },
+    {
+      "event": "verified_notice",
+      "before": {
+        "jobs": [
+          {
+            "id": "monthly-north",
+            "site": "north",
+            "kind": "routine",
+            "hours": 720
+          },
+          {
+            "id": "monthly-south",
+            "site": "south",
+            "kind": "routine",
+            "hours": 720
+          },
+          {
+            "id": "notify-8",
+            "site": "north",
+            "kind": "critical",
+            "hours": 48
+          },
+          {
+            "id": "notify-9",
+            "site": "south",
+            "kind": "critical",
+            "hours": 48
+          }
+        ],
+        "receipts": [],
+        "effect_count": 0
+      },
+      "after": {
+        "jobs": [
+          {
+            "id": "monthly-north",
+            "site": "north",
+            "kind": "routine",
+            "hours": 720
+          },
+          {
+            "id": "monthly-south",
+            "site": "south",
+            "kind": "routine",
+            "hours": 720
+          },
+          {
+            "id": "notify-8",
+            "site": "north",
+            "kind": "critical",
+            "hours": 24
+          },
+          {
+            "id": "notify-9",
+            "site": "south",
+            "kind": "critical",
+            "hours": 48
+          }
+        ],
+        "receipts": [
+          {
+            "finding": "finding:effect:repair:notice:north-v2",
+            "job": "notify-8",
+            "recipient": "north-customer-inbox",
+            "elapsed": 24
+          }
+        ],
+        "effect_count": 1
+      },
+      "receipt": {
+        "finding": "finding:effect:repair:notice:north-v2",
+        "job": "notify-8",
+        "recipient": "north-customer-inbox",
+        "elapsed": 24
+      }
+    },
+    {
+      "event": "discovery_started",
+      "fixture": "north-product-signals-v1",
+      "copied_only": false
+    },
+    {
+      "event": "model_turn",
+      "actor": "product",
+      "session": "6d05812a96274c61a518065e15f27f71",
+      "instruction": "Call read_context to restore the Product partnership. Use the empty argument object {}.",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_v7vokdbr",
+          "function": {
+            "index": 0,
+            "name": "read_context",
+            "arguments": {}
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool",
+      "actor": "product",
+      "session": "6d05812a96274c61a518065e15f27f71",
+      "tool": "read_context",
+      "arguments": {},
+      "result": {
+        "agent": "product",
+        "principal": "Noor",
+        "role": "Product",
+        "session": "6d05812a96274c61a518065e15f27f71",
+        "work": [
+          {
+            "task": "Resolve the North critical notice handoff",
+            "history": "Ari left a note on the dependency",
+            "author": "Ari",
+            "grant": "institutional",
+            "state": "verified"
+          }
+        ]
+      }
+    },
+    {
+      "event": "model_turn",
+      "actor": "product",
+      "session": "6d05812a96274c61a518065e15f27f71",
+      "instruction": "Call review_signals to read the available observations. Use the empty argument object {}.",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_od6iozd2",
+          "function": {
+            "index": 0,
+            "name": "review_signals",
+            "arguments": {}
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool",
+      "actor": "product",
+      "session": "6d05812a96274c61a518065e15f27f71",
+      "tool": "review_signals",
+      "arguments": {},
+      "result": {
+        "independent": [
+          {
+            "source": "delivery-shift-17",
+            "version": 1,
+            "span": "shift-note-17",
+            "author": "Maya",
+            "recorded_day": 11,
+            "passage": "Dispatch checked the shared inbox and called the site twice to learn whether North had acknowledged a critical notice. Acknowledgment status was unavailable.",
+            "team": "Delivery",
+            "origin": "shift-17"
+          },
+          {
+            "source": "customer-ticket-51",
+            "version": 1,
+            "span": "ticket-51",
+            "author": "Rosa",
+            "recorded_day": 15,
+            "passage": "On a later North notice, the customer opened a support ticket to ask whether their acknowledgment reached Delivery. The portal did not show it.",
+            "team": "Customer Success",
+            "origin": "support-51"
+          }
+        ],
+        "copies": [
+          {
+            "source": "delivery-shift-forward",
+            "version": 1,
+            "span": "forward-4",
+            "author": "Customer Success",
+            "recorded_day": 12,
+            "passage": "Forward of Maya's shift note 17 about manual checks for the same North notice.",
+            "team": "Customer Success",
+            "origin": "shift-17"
+          }
+        ]
+      }
+    },
+    {
+      "event": "model_turn",
+      "actor": "product",
+      "session": "6d05812a96274c61a518065e15f27f71",
+      "instruction": "Call review_capability to inspect the pilot and its limit. Use the empty argument object {}.",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_ngwyzopf",
+          "function": {
+            "index": 0,
+            "name": "review_capability",
+            "arguments": {}
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool",
+      "actor": "product",
+      "session": "6d05812a96274c61a518065e15f27f71",
+      "tool": "review_capability",
+      "arguments": {},
+      "result": {
+        "capability": "acknowledgment-alert",
+        "site": "north",
+        "readiness": "pilot",
+        "source": "ack-alert-spec",
+        "evidence": {
+          "source": "ack-alert-spec",
+          "version": 1,
+          "span": "pilot-spec-3",
+          "author": "Noor",
+          "recorded_day": 13,
+          "passage": "The pilot acknowledgment alert can report a receipt when the site connector emits an acknowledgment event. North's connector compatibility is unverified."
+        }
+      }
+    },
+    {
+      "event": "model_turn",
+      "actor": "product",
+      "session": "6d05812a96274c61a518065e15f27f71",
+      "instruction": "Copy the two independent source IDs as delivery_source and customer_source. Copy capability from review_capability. Suggest a one-site next_step and ask a short question about the open compatibility check. Use exactly these argument keys: delivery_source, customer_source, capability, next_step, question.",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_v3dozjs5",
+          "function": {
+            "index": 0,
+            "name": "save_trial",
+            "arguments": {
+              "delivery_source": "delivery-shift-17",
+              "customer_source": "customer-ticket-51",
+              "capability": "acknowledgment-alert",
+              "next_step": "Verify compatibility of North's connector",
+              "question": "Is North's connector compatible with the acknowledgment alert pilot?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool",
+      "actor": "product",
+      "session": "6d05812a96274c61a518065e15f27f71",
+      "tool": "save_trial",
+      "arguments": {
+        "delivery_source": "delivery-shift-17",
+        "customer_source": "customer-ticket-51",
+        "capability": "acknowledgment-alert",
+        "next_step": "Verify compatibility of North's connector",
+        "question": "Is North's connector compatible with the acknowledgment alert pilot?"
+      },
+      "result": {
+        "id": "pilot:north:acknowledgment-alert"
+      }
+    },
+    {
+      "event": "discovery_retained",
+      "reader_session": "60d25014f05e42d0a866376edb9de482",
+      "trial": {
+        "id": "pilot:north:acknowledgment-alert",
+        "owner": "Noor",
+        "author": "product",
+        "author_session": "6d05812a96274c61a518065e15f27f71",
+        "status": "awaiting-review",
+        "next_step": "Verify compatibility of North's connector",
+        "question": "Is North's connector compatible with the acknowledgment alert pilot?",
+        "site": "north",
+        "recorded_day": 16,
+        "sources": [
+          "customer-ticket-51",
+          "delivery-shift-17"
+        ],
+        "capability": "acknowledgment-alert",
+        "evidence": [
+          {
+            "source": "customer-ticket-51",
+            "version": 1,
+            "span": "ticket-51",
+            "author": "Rosa",
+            "recorded_day": 15,
+            "passage": "On a later North notice, the customer opened a support ticket to ask whether their acknowledgment reached Delivery. The portal did not show it.",
+            "team": "Customer Success",
+            "origin": "support-51"
+          },
+          {
+            "source": "delivery-shift-17",
+            "version": 1,
+            "span": "shift-note-17",
+            "author": "Maya",
+            "recorded_day": 11,
+            "passage": "Dispatch checked the shared inbox and called the site twice to learn whether North had acknowledged a critical notice. Acknowledgment status was unavailable.",
+            "team": "Delivery",
+            "origin": "shift-17"
+          },
+          {
+            "source": "ack-alert-spec",
+            "version": 1,
+            "span": "pilot-spec-3",
+            "author": "Noor",
+            "recorded_day": 13,
+            "passage": "The pilot acknowledgment alert can report a receipt when the site connector emits an acknowledgment event. North's connector compatibility is unverified."
+          }
+        ]
+      },
+      "handoff": {
+        "task": "Resolve the North critical notice handoff",
+        "history": "Ari left a note on the dependency",
+        "author": "Ari",
+        "grant": "institutional",
+        "state": "verified"
+      },
+      "simulator_unchanged": true
+    }
+  ],
+  "status": "discovery_proposed",
+  "handoff_status": "verified"
+}
