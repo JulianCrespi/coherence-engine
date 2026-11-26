@@ -66,6 +66,10 @@ For live answers, install the Codex CLI and sign in to ChatGPT. Ask a fictional 
 
 The tests check permissions, temporal cutoffs, watch retries, replay, and simulated effects. They also compare the included graph with a fresh fixture at both Maya cutoffs.
 
+## Maintain the prototype
+
+See [AGENTS.md](AGENTS.md) for source boundaries, verification commands, and how to record changes to the demo.
+
 ## Core capabilities
 
 The research explores five capabilities. The hackathon prototype illustrates continuity, coordination, and discovery in the fictional company.
