@@ -25,7 +25,7 @@ class JudgeReplayTest(unittest.TestCase):
         views = build_views(result)
         legal = json.dumps(views[("respond", "legal")])
         delivery = json.dumps(views[("respond", "delivery")])
-        product = json.dumps(views[("discover", "product")])
+        product = views[("discover", "product")]
         verifier = json.dumps(views[("respond", "verifier")])
         self.assertIn("clause-2", legal)
         self.assertNotIn("notify-8", legal)
@@ -33,8 +33,19 @@ class JudgeReplayTest(unittest.TestCase):
         self.assertNotIn("north-customer-inbox", delivery)
         self.assertIn("north-customer-inbox", verifier)
         self.assertIn("notify-9", verifier)
-        self.assertIn("Awaiting review", product)
-        self.assertNotIn("customer-private", product)
+        product_nodes = {node["id"]: node for node in product["nodes"]}
+        readback = product_nodes[product["focus"]]["readback"]
+        handoff, pending = readback
+        retained = next(event for event in result["events"] if event["event"] == "discovery_retained")
+        self.assertEqual(handoff["title"], "Verified North handoff")
+        self.assertIn(retained["handoff"]["author"], handoff["detail"])
+        self.assertEqual(pending["title"], "Pending one-site trial")
+        self.assertEqual(dict(pending["facts"]), {
+            "Owner": retained["trial"]["owner"], "Open question": retained["trial"]["question"],
+        })
+        self.assertEqual(dict(product_nodes["trial"]["facts"])["State"], "Awaiting review")
+        self.assertNotIn("Handoff read back", dict(product_nodes["trial"]["facts"]))
+        self.assertNotIn("customer-private", json.dumps(product))
         self.assertNotIn(("remember", "product"), views)
 
     def test_rejects_effect_receipt_that_fresh_execution_cannot_reproduce(self):

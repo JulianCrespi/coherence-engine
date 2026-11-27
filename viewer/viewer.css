@@ -226,6 +226,10 @@ h1 {
 .facts div { padding: 8px 0; border-top: 1px solid var(--line); }
 .facts dt { color: var(--muted); font-size: .71rem; font-weight: 660; }
 .facts dd { margin: 2px 0 0; font-size: .82rem; line-height: 1.42; overflow-wrap: anywhere; }
+.readback-record { margin-top: 14px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
+.readback-record h4 { margin: 0 0 4px; font-size: .96rem; line-height: 1.28; }
+.readback-record p { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.45; }
+.readback-record .facts { margin-top: 8px; }
 .scene-controls { margin-top: 17px; display: flex; justify-content: space-between; gap: 10px; }
 .scene-controls button { min-height: 40px; border-radius: 9px; padding: 7px 12px; font-size: .82rem; font-weight: 680; }
 .secondary { border: 1px solid var(--line); background: var(--paper); }

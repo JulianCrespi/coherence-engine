@@ -157,10 +157,22 @@ def build_views(trace):
     capability = tool("product", "review_capability")
     retained = event("discovery_retained")
     trial = retained["trial"]
+    handoff = retained["handoff"]
+    product_agent = node(
+        "product", "Product agent", "Agent", 49, 48,
+        f"{product['principal']}’s fresh session recovered two records from Relate.",
+    )
+    product_agent["readback"] = [
+        dict(title=f"{handoff['state'].title()} North handoff",
+             detail=f"{handoff['author']} left the dependency note for North’s critical notices."),
+        dict(title="Pending one-site trial",
+             detail=f"The proposal covers the acknowledgment alert at {trial['site'].title()}.",
+             facts=(("Owner", trial["owner"]), ("Open question", trial["question"]))),
+    ]
     discover = view(
-        "Product finds a trial worth reviewing",
+        "Product connects evidence across teams",
         "Two independent reports point to an acknowledgment gap. A limited alert pilot offers a test.",
-        "trial",
+        "product",
         [
             source_node("shift", "Delivery shift note", 19, 27, work_note,
                         (("Origin", work_note["origin"]),)),
@@ -168,15 +180,13 @@ def build_views(trace):
                         (("Origin", customer_note["origin"]),)),
             source_node("copy", "Forwarded shift note", 49, 82, signals["copies"][0],
                         (("Origin", signals["copies"][0]["origin"]),)),
-            node("product", "Product agent", "Agent", 49, 48,
-                 "Relate returned the observations and pilot capability for the same workflow.",
-                 (("Principal", product["principal"]), ("Independent origins", len(signals["independent"])))),
+            product_agent,
             source_node("pilot", "Alert pilot", 77, 24, capability["evidence"],
                         (("Readiness", capability["readiness"].title()),)),
             node("trial", "One-site trial", "Proposal", 77, 69, trial["next_step"],
                  (("Owner", trial["owner"]), ("Site", trial["site"].title()),
-                  ("Open question", trial["question"]), ("State", "Awaiting review"),
-                  ("Handoff read back", retained["handoff"]["state"].title()))),
+                  ("Open question", trial["question"]),
+                  ("State", trial["status"].replace("-", " ").capitalize()))),
         ],
         [edge("copy", "shift", "same origin", True), edge("shift", "product", "evidence"),
          edge("ticket", "product", "evidence"), edge("product", "trial", "proposes"),

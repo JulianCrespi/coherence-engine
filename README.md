@@ -30,7 +30,7 @@ Open the [judge viewer](http://127.0.0.1:8765/). Choose a scene and select nodes
 | --- | --- |
 | **Remember** | Maya's Delivery agent starts a fresh session and recovers Ari's unfinished handoff under an institutional grant. |
 | **Respond** | A signed amendment cuts North's deadline from 48 to 24 hours. Ari's note identifies the component, and the scheduler log identifies its renamed job, `notify-8`. Open **Verifier** to see Stan's approval and the separate simulated inbox receipt. |
-| **Discover** | Noor's Product agent connects two independent observations with a pilot capability. It recognizes a forwarded copy and records a one-site trial proposal for review. |
+| **Discover** | Noor's Product agent connects two independent observations with an alert pilot and recognizes a forwarded copy. A fresh Product session reads back the verified North handoff and pending trial as separate records. The trial shows its owner and the open connector question. |
 
 The walkthrough replays recorded model requests and a fictional Operations approval. It reruns Relate reads and writes, the scheduler update, and the independent inbox check. Every person, record, and operational outcome in the demo is synthetic.
 

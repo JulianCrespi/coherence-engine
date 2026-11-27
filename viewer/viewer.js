@@ -35,6 +35,17 @@ function textElement(tag, value, className = "") {
   return element;
 }
 
+function factList(entries) {
+  const facts = document.createElement("dl");
+  facts.className = "facts";
+  for (const [label, value] of entries) {
+    const row = document.createElement("div");
+    row.append(textElement("dt", label), textElement("dd", value));
+    facts.append(row);
+  }
+  return facts;
+}
+
 function inspect(id) {
   const node = view.nodes.find(item => item.id === id);
   if (!node) return;
@@ -47,15 +58,13 @@ function inspect(id) {
     textElement("p", node.kind, "kind"),
     textElement("p", node.detail, "detail"),
   ];
-  if (node.facts.length) {
-    const facts = document.createElement("dl");
-    facts.className = "facts";
-    for (const [label, value] of node.facts) {
-      const row = document.createElement("div");
-      row.append(textElement("dt", label), textElement("dd", value));
-      facts.append(row);
-    }
-    parts.push(facts);
+  if (node.facts.length) parts.push(factList(node.facts));
+  for (const result of node.readback ?? []) {
+    const record = document.createElement("section");
+    record.className = "readback-record";
+    record.append(textElement("h4", result.title), textElement("p", result.detail));
+    if (result.facts) record.append(factList(result.facts));
+    parts.push(record);
   }
   evidence.replaceChildren(...parts);
   draw();
